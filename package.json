@@ -1,8 +1,8 @@
 {
-  "name": "startup",
-  "author": "",
+  "name": "mean-startup",
+  "author": "John Huang",
   "version": "0.0.1",
-  "description": "",
+  "description": "MEAN stack startup project",
   "keywords": [
     "MongoDB",
     "ExpressJS",
