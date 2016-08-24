@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
-var METADATA = require('./src/metadata.js').default;
+var METADATA = require('./src/METADATA.js');
 
 module.exports = {
     debug: true,
