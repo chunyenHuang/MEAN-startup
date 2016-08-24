@@ -1,3 +1,8 @@
+# Features
+1. Component style Angular 1.5.x (like ng2)  
+2. Template for Angular modules and momponents  
+3. webpack
+
 # GetStarted
 ### Install NPM
 ```
