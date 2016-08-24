@@ -1,2 +1,9 @@
-<h1>{{$ctrl.message}}</h1>
-<div ui-view></div>
+<div layout="row" layout-fill layout-align="center start">
+    <md-content class="md-padding">
+        <h1>{{$ctrl.message}}</h1>
+        <p ng-repeat="(prop, value) in $ctrl.METADATA">
+            {{prop}}:
+            {{value}}
+        </p>
+    </md-content>
+</div>

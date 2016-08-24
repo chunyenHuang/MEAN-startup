@@ -11,7 +11,7 @@ import ngAnimate from 'angular-animate';
 
 // configs
 import themeConfig from './themeConfig';
-import metadata from './metadata';
+import METADATA from './METADATA';
 
 // entry modules
 import app from './app';
@@ -32,4 +32,4 @@ angular
         $urlRouterProvider.otherwise('/');
     })
     .config(themeConfig)
-    .constant('metadata', metadata);
+    .constant('METADATA', METADATA);

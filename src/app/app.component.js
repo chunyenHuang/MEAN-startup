@@ -5,11 +5,11 @@ const appComponent = {
     template,
     controller: /* @ngInject */ class AppController {
         static get $inject() {
-            return ['$timeout'];
+            return ['$timeout', 'METADATA'];
         }
-        constructor($timeout) {
+        constructor($timeout, METADATA) {
             this.$timeout = $timeout;
-
+            this.METADATA = METADATA;
         }
         $onInit(){
             this.message = 'Hello~';

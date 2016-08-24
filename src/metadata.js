@@ -3,16 +3,17 @@ constructor(metadata){
     this.metadata = metadata;
 }
 */
-export default {
+const METADATA = {
     // for web metadatas
-    webTitle: '',
-    webAuthor: '',
-    webDescription: '',
+    webTitle: 'My Website Title',
+    webAuthor: 'Me',
+    webDescription: 'Me Myself and I',
     baseUrl: '/',
     iconUrl: './assets/img/',
     // for app metadatas
-    appName: '',
+    appName: 'My Web App',
     version: '0.0.1',
+    author: 'Me',
     companyName: '',
     address: '',
     telephone: '',
@@ -20,3 +21,5 @@ export default {
     // other metadas
     message: 'Login Message'
 };
+
+module.exports = METADATA;
