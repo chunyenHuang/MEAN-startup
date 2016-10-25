@@ -1,15 +1,21 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 const CompressionPlugin = require('compression-webpack-plugin');
+const config = require('./webpack.config');
 
-var config = require('./webpack.config');
+config.entry = {
+    'app': [
+        'babel-polyfill',
+        path.join(__dirname, 'client/src/index.js')
+    ]
+};
 
 config.debug = false;
 config.devtool = 'source-map';
 config.output = {
     filename: '[name].bundle.js',
     publicPath: '',
-    path: path.resolve(__dirname, 'dist')
+    path: path.join(__dirname, 'dist')
 };
 
 config.plugins = config.plugins.concat([

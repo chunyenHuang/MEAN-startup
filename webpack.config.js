@@ -1,12 +1,12 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ProgressBarPlugin = require('progress-bar-webpack-plugin');
-var METADATA = require('./src/METADATA.js');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const METADATA = require('./client/src/METADATA.js');
 
 module.exports = {
     debug: true,
-    postcss: () => [autoprefixer],
+    // postcss: () => [autoprefixer],
     entry: {},
     module: {
         loaders: [
@@ -41,17 +41,26 @@ module.exports = {
         ],
         noParse: []
     },
+    resolve: {
+        root: [],
+        modulesDirectories: ['node_modules'],
+        alias: {
+            'variable': path.join(__dirname, './client/src/index.variable.styl'),
+            'client': path.join(__dirname, './client')
+        },
+        extensions: ['', '.js']
+    },
     plugins: [
         new ProgressBarPlugin(),
         new webpack.NoErrorsPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: (module, count) => { // min entries shared >=2
-                return module.resource && module.resource.indexOf(path.resolve(__dirname, 'src')) === -1;
-            }
-        }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'vendor',
+        //     minChunks: (module, count) => { // min entries shared >=2
+        //         return module.resource && module.resource.indexOf(path.resolve(__dirname, 'src')) === -1;
+        //     }
+        // }),
         new HtmlWebpackPlugin({
-            template: 'src/index.ejs',
+            template: path.join(__dirname, './client/src/index.ejs'),
             inject: 'body',
             hash: true,
             title: METADATA.webTitle,
