@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const METADATA = require('./client/src/METADATA.js');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     debug: true,
@@ -59,6 +60,12 @@ module.exports = {
         //         return module.resource && module.resource.indexOf(path.resolve(__dirname, 'src')) === -1;
         //     }
         // }),
+        new CopyWebpackPlugin([
+            {
+                from: path.join(__dirname, './client/src/assets'),
+                to: 'assets'
+            }
+        ]),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, './client/src/index.ejs'),
             inject: 'body',
