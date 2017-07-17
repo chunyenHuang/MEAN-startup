@@ -1,5 +1,7 @@
 # GetStarted
 ### Install NPM
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/chunyenHuang/MEAN-startup.svg)](https://greenkeeper.io/)
 ```
 npm run global && npm install
 ```
